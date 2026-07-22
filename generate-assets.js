@@ -4,21 +4,11 @@ const path = require('path');
 const ASSETS_DIR = path.join(__dirname, 'assets');
 const TOKEN = process.env.GITHUB_TOKEN;
 
+// Hardcode the raw GitHub URL base for images to bypass SVG base64 limits on GitHub
+const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/Navneet23b-Git/Navneet23b-Git/main/assets';
+
 // Helpers
 const rnd = (min, max) => Math.random() * (max - min) + min;
-
-// Embed images as base64 so they render when SVG is used in an <img> tag
-function getBase64Image(filename) {
-    try {
-        const filepath = path.join(ASSETS_DIR, filename);
-        if (!fs.existsSync(filepath)) return '';
-        const base64 = fs.readFileSync(filepath, 'base64');
-        return `data:image/png;base64,${base64}`;
-    } catch (e) {
-        console.error(`Error loading image ${filename}:`, e);
-        return '';
-    }
-}
 
 const COLORS = {
     bg: '#090B10',
@@ -45,8 +35,6 @@ async function fetchGitHubData() {
         return getMockData();
     }
     
-    // In a real scenario, we'd query GraphQL here. 
-    // Since we are writing the script for the user to run, we'll provide the scaffolding.
     console.log("Fetching real data from GitHub API...");
     try {
         const res = await fetch('https://api.github.com/graphql', {
@@ -103,7 +91,6 @@ function parseGitHubData(viewer) {
         color: r.primaryLanguage ? r.primaryLanguage.color : '#94A3B8'
     }));
 
-    // Parse contributions into a flat array of intensities
     const weeks = viewer.contributionsCollection.contributionCalendar.weeks;
     const days = weeks.flatMap(w => w.contributionDays);
     const maxContribs = Math.max(...days.map(d => d.contributionCount), 1);
@@ -137,9 +124,9 @@ function getMockData() {
 }
 
 function generateHeroSVG() {
-    const width = 800;
-    const height = 300;
-    const bg = getBase64Image('hero.png');
+    const width = 650;
+    const height = 240;
+    const bgUrl = `${GITHUB_RAW_BASE}/hero.png`;
     
     const svg = `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
@@ -153,6 +140,7 @@ function generateHeroSVG() {
             }
             .code { font-family: monospace; fill: ${COLORS.textSecondary}; font-size: 14px; }
             .glow { text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap');
         </style>
         <clipPath id="rounded">
             <rect width="${width}" height="${height}" rx="16" />
@@ -161,7 +149,7 @@ function generateHeroSVG() {
     
     <g clip-path="url(#rounded)">
         <rect width="${width}" height="${height}" fill="${COLORS.bg}" />
-        ${bg ? `<image href="${bg}" width="${width}" height="${height}" preserveAspectRatio="xMidYMid slice" opacity="0.6"/>` : ''}
+        <image href="${bgUrl}" width="${width}" height="${height}" preserveAspectRatio="xMidYMid slice" opacity="0.6"/>
         
         <!-- Overlay Gradient -->
         <rect width="${width}" height="${height}" fill="url(#grad)" />
@@ -171,60 +159,67 @@ function generateHeroSVG() {
             <stop offset="100%" stop-color="${COLORS.bg}" stop-opacity="0" />
         </linearGradient>
 
-        <text x="40" y="80" font-family="Inter, sans-serif" font-size="24" fill="${COLORS.textPrimary}" font-weight="bold">Hi there! 👋</text>
-        <text x="40" y="130" font-family="Inter, sans-serif" font-size="48" fill="${COLORS.textPrimary}" font-weight="800">I'm <tspan fill="${COLORS.accent}">Navneet</tspan></text>
+        <text x="30" y="60" font-family="'Inter', sans-serif" font-size="20" fill="${COLORS.textPrimary}" font-weight="bold">Hi there! 👋</text>
+        <text x="30" y="105" font-family="'Inter', sans-serif" font-size="40" fill="${COLORS.textPrimary}" font-weight="800">I'm <tspan fill="${COLORS.accent}">Navneet</tspan></text>
         
-        <text x="40" y="180" class="code">while (learning) {</text>
-        <text x="60" y="205" class="code">  <tspan fill="${COLORS.cyan}">build</tspan>();</text>
-        <text x="60" y="230" class="code">  <tspan fill="${COLORS.cyan}">automate</tspan>();</text>
-        <text x="60" y="255" class="code">  <tspan fill="${COLORS.cyan}">repeat</tspan>();</text>
-        <text x="40" y="280" class="code">}</text>
+        <text x="30" y="145" class="code">while (learning) {</text>
+        <text x="50" y="170" class="code">  <tspan fill="${COLORS.cyan}">build</tspan>();</text>
+        <text x="50" y="195" class="code">  <tspan fill="${COLORS.cyan}">automate</tspan>();</text>
+        <text x="50" y="220" class="code">  <tspan fill="${COLORS.cyan}">repeat</tspan>();</text>
+        <text x="30" y="245" class="code">}</text>
     </g>
 </svg>`;
     fs.writeFileSync(path.join(ASSETS_DIR, 'hero.svg'), svg.trim());
 }
 
 function generateProjectsSVG(data) {
-    const width = 800;
-    const height = 400; // 3 rows of 2
+    const width = 650;
+    const height = 360; 
     
     let cards = '';
     data.repos.forEach((repo, i) => {
         const col = i % 2;
         const row = Math.floor(i / 2);
-        const x = col * 390 + 10;
-        const y = row * 125 + 10;
+        const x = col * 320 + 5;
+        const y = row * 115 + 5;
         
-        const thumbBase64 = getBase64Image(`thumb_${i+1}.png`);
+        const thumbUrl = `${GITHUB_RAW_BASE}/thumb_${i+1}.png`;
         
         cards += `
         <g transform="translate(${x}, ${y})">
-            <rect width="370" height="115" fill="${COLORS.card}" stroke="${COLORS.border}" stroke-width="1.5" rx="12" />
+            <rect width="310" height="105" fill="${COLORS.card}" stroke="${COLORS.border}" stroke-width="1.5" rx="12" />
             
             <!-- Thumbnail -->
-            ${thumbBase64 ? `<image href="${thumbBase64}" x="15" y="15" width="85" height="85" preserveAspectRatio="xMidYMid slice" />` : `<rect x="15" y="15" width="85" height="85" fill="${COLORS.bg}" rx="8"/>`}
+            <rect x="15" y="15" width="75" height="75" fill="${COLORS.bg}" rx="8"/>
+            <image href="${thumbUrl}" x="15" y="15" width="75" height="75" preserveAspectRatio="xMidYMid slice" clip-path="url(#thumbClip)" />
             
-            <text x="115" y="35" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="${COLORS.textPrimary}">${repo.name}</text>
+            <text x="105" y="32" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="${COLORS.textPrimary}">${repo.name}</text>
             
             <!-- Description -->
-            <foreignObject x="115" y="45" width="240" height="40">
-                <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Inter, sans-serif; font-size: 11px; color: ${COLORS.textSecondary}; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+            <foreignObject x="105" y="40" width="190" height="35">
+                <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Inter', sans-serif; font-size: 10px; color: ${COLORS.textSecondary}; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4;">
                     ${repo.desc}
                 </div>
             </foreignObject>
             
             <!-- Tech & Stats -->
-            <rect x="115" y="85" width="50" height="16" fill="${COLORS.bg}" rx="4" />
-            <text x="140" y="96" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="${repo.color}" text-anchor="middle">${repo.lang}</text>
+            <rect x="105" y="80" width="45" height="14" fill="${COLORS.bg}" rx="4" />
+            <text x="127" y="90" font-family="'Inter', sans-serif" font-size="9" font-weight="bold" fill="${repo.color}" text-anchor="middle">${repo.lang}</text>
             
-            <text x="180" y="97" font-family="Inter, sans-serif" font-size="12" fill="${COLORS.textSecondary}">⭐ ${repo.stars}</text>
-            <text x="230" y="97" font-family="Inter, sans-serif" font-size="12" fill="${COLORS.textSecondary}">⑂ ${repo.forks}</text>
+            <text x="160" y="91" font-family="'Inter', sans-serif" font-size="10" fill="${COLORS.textSecondary}">⭐ ${repo.stars}</text>
+            <text x="200" y="91" font-family="'Inter', sans-serif" font-size="10" fill="${COLORS.textSecondary}">⑂ ${repo.forks}</text>
         </g>
         `;
     });
 
     const svg = `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <clipPath id="thumbClip">
+            <rect x="15" y="15" width="75" height="75" rx="8" />
+        </clipPath>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap');</style>
+    </defs>
     <rect width="${width}" height="${height}" fill="${COLORS.bg}" />
     ${cards}
 </svg>`;
@@ -234,10 +229,10 @@ function generateProjectsSVG(data) {
 function generateOceanSVG(data) {
     const cols = 52;
     const rows = 7;
-    const cellSize = 12;
-    const gap = 3;
-    const width = 800;
-    const height = 280;
+    const cellSize = 10;
+    const gap = 2;
+    const width = 650;
+    const height = 240;
 
     const icons = {
         anchor: '<path d="M12 2v4M12 22v-4M8 22h8M12 18a6 6 0 0 0-6-6H4m16 0h-2a6 6 0 0 0-6 6M9 6a3 3 0 1 1 6 0 3 3 0 0 1-6 0z" fill="none" stroke="currentColor" stroke-width="2"/>',
@@ -249,26 +244,21 @@ function generateOceanSVG(data) {
 
     let elements = '';
     
-    // Map linear contribution data to grid and apply wave math
     for (let x = 0; x < cols; x++) {
-        // Complex natural wave function
         const wave = Math.sin(x * 0.15) * 1.5 + Math.sin(x * 0.4) * 0.8 + Math.cos(x * 0.2) * 1.2;
         
         for (let y = 0; y < rows; y++) {
             const i = x * rows + y;
             if (i >= data.contributions.length) break;
             
-            // Base intensity from GitHub API
             let level = data.contributions[i] || 0;
-            
-            // Modify visual intensity based on wave height (bottom cells always solid, top cells wavy)
             const depth = (rows - y) + wave;
-            if (depth < 2 && level > 0) level = 1; // fade out tops
+            if (depth < 2 && level > 0) level = 1;
 
             const cx = x * (cellSize + gap) + 15;
-            const cy = y * (cellSize + gap) + 60; // offset down
+            const cy = y * (cellSize + gap) + 40;
             
-            if (level === 0 && depth > 2) level = 1; // Make the ocean "full" of dark blue at bottom
+            if (level === 0 && depth > 2) level = 1;
 
             if (level > 5) level = 5;
             if (level < 0) level = 0;
@@ -285,7 +275,7 @@ function generateOceanSVG(data) {
             <g transform="translate(${cx}, ${cy})" color="${color}">
                 <g>
                     ${level > 0 ? `<animateTransform attributeName="transform" type="translate" values="0,0; 0,-${bob}; 0,0" dur="${dur}s" begin="${delay}s" repeatCount="indefinite" />` : ''}
-                    <g transform="scale(0.5)">
+                    <g transform="scale(0.4)">
                         ${iconSvg}
                     </g>
                 </g>
@@ -295,8 +285,11 @@ function generateOceanSVG(data) {
 
     const svg = `
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap');</style>
+    </defs>
     <rect width="${width}" height="${height}" fill="${COLORS.bg}" rx="16"/>
-    <!-- Lighthouse Beam -->
+    
     <path d="M${width-40},10 L${width-300},150 L${width},150 Z" fill="url(#beam)" opacity="0.15">
         <animateTransform attributeName="transform" type="rotate" values="-5 ${width-40} 10; 5 ${width-40} 10; -5 ${width-40} 10" dur="10s" repeatCount="indefinite"/>
     </path>
@@ -306,8 +299,8 @@ function generateOceanSVG(data) {
             <stop offset="100%" stop-color="${COLORS.cyan}" stop-opacity="0" />
         </linearGradient>
     </defs>
-    <!-- Ocean Base -->
-    <rect x="0" y="100" width="${width}" height="180" fill="url(#oceanGrad)" opacity="0.2"/>
+    
+    <rect x="0" y="80" width="${width}" height="160" fill="url(#oceanGrad)" opacity="0.2"/>
     <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
         <stop offset="0%" stop-color="${COLORS.accent}" stop-opacity="0" />
         <stop offset="100%" stop-color="${COLORS.accent}" stop-opacity="0.5" />
@@ -315,13 +308,13 @@ function generateOceanSVG(data) {
     
     ${elements}
 
-    <!-- Stat Footer -->
-    <g transform="translate(0, 230)">
-        <text x="200" y="10" font-family="Inter, sans-serif" font-size="12" fill="${COLORS.textSecondary}" text-anchor="middle">Total Contributions</text>
-        <text x="200" y="30" font-family="Inter, sans-serif" font-size="20" fill="${COLORS.textPrimary}" font-weight="bold" text-anchor="middle">${data.totalContribs}</text>
+    <g transform="translate(0, 195)">
+        <rect x="15" y="0" width="620" height="40" fill="${COLORS.card}" rx="8" stroke="${COLORS.border}" stroke-width="1"/>
+        <text x="170" y="15" font-family="'Inter', sans-serif" font-size="10" fill="${COLORS.textSecondary}" text-anchor="middle">Total Contributions</text>
+        <text x="170" y="32" font-family="'Inter', sans-serif" font-size="16" fill="${COLORS.textPrimary}" font-weight="bold" text-anchor="middle">${data.totalContribs}</text>
         
-        <text x="600" y="10" font-family="Inter, sans-serif" font-size="12" fill="${COLORS.textSecondary}" text-anchor="middle">This Year</text>
-        <text x="600" y="30" font-family="Inter, sans-serif" font-size="20" fill="${COLORS.textPrimary}" font-weight="bold" text-anchor="middle">365 days</text>
+        <text x="480" y="15" font-family="'Inter', sans-serif" font-size="10" fill="${COLORS.textSecondary}" text-anchor="middle">This Year</text>
+        <text x="480" y="32" font-family="'Inter', sans-serif" font-size="16" fill="${COLORS.textPrimary}" font-weight="bold" text-anchor="middle">365 days</text>
     </g>
 </svg>`;
     fs.writeFileSync(path.join(ASSETS_DIR, 'ocean.svg'), svg.trim());
@@ -332,7 +325,7 @@ async function run() {
     generateHeroSVG();
     generateProjectsSVG(data);
     generateOceanSVG(data);
-    console.log("Assets generated successfully!");
+    console.log("Assets generated successfully using raw URLs!");
 }
 
 run();
