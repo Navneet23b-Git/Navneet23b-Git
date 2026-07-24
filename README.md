@@ -73,34 +73,9 @@
 <br/>
 
 <!-- Recent Activity & Highlights -->
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h3>📝 Recent Contribution Activity</h3>
-      <ul>
-        <li>➕ Pushed to <a href="#">ai-email-assistant</a> (2 hours ago)</li>
-        <li>🚨 Opened issue in <a href="#">self-healing-cicd</a> (1 day ago)</li>
-        <li>🔀 Merged PR in <a href="#">ai-pr-reviewer</a> (2 days ago)</li>
-        <li>✅ Closed issue in <a href="#">smart-library-system</a> (5 days ago)</li>
-        <li>➕ Pushed to <a href="#">portfolio-website</a> (5 days ago)</li>
-        <li>📁 Created a new repository <a href="#">system-design-notes</a> (1 week ago)</li>
-        <li>🏅 Earned the <b>Pull Shark</b> badge (1 week ago)</li>
-      </ul>
-      <div align="right"><a href="#">View all activity ➔</a></div>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🏆 Highlights</h3>
-      <ul>
-        <li>🎓 GitHub Campus Expert</li>
-        <li>💪 500+ LeetCode Problems Solved</li>
-        <li>🎯 HWi OA Round Qualified</li>
-        <li>🥇 JGEC Volleyball Runner Up</li>
-        <li>💼 SWE Intern @ AlgoUniversity</li>
-        <li>🚀 Built multiple AI-powered projects</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="./activity_highlights.svg?v=2" width="100%" alt="Recent Activity and Highlights" />
+</div>
 
 <br/>
 
