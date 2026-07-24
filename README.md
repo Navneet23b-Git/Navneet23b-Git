@@ -1,6 +1,6 @@
 <!-- Header Image -->
 <div align="center">
-  <img src="https://via.placeholder.com/1200x350/0d1117/58a6ff?text=Hi+there!+I'm+Navneet+(Insert+Your+Header+Image+Here)" width="100%" alt="Header" />
+  <img src="./header_banner.png" width="100%" alt="Header" />
 </div>
 
 <br/>
