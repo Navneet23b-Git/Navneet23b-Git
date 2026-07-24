@@ -64,19 +64,11 @@
 
 <!-- GitHub Analytics -->
 ### 📊 GitHub Analytics
-<table width="100%">
-  <tr>
-    <td width="33%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api?username=Navneet23b-Git&show_icons=true&theme=react&bg_color=0D1117&border_color=30363d&title_color=58a6ff&text_color=c9d1d9" alt="GitHub Stats" />
-    </td>
-    <td width="33%" align="center">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Navneet23b-Git&theme=react&background=0D1117&border=30363d&fire=FFA116&ring=58a6ff&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=c9d1d9&sideLabels=c9d1d9&dates=c9d1d9" alt="GitHub Streak" />
-    </td>
-    <td width="33%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Navneet23b-Git&layout=pie&theme=react&bg_color=0D1117&border_color=30363d&title_color=58a6ff&text_color=c9d1d9" alt="Top Languages" />
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <a href="https://github.com/Navneet23b-Git">
+    <img src="./analytics.svg" width="100%" alt="GitHub Analytics" />
+  </a>
+</div>
 
 <br/>
 
