@@ -14,8 +14,11 @@
 
 <!-- Featured Projects -->
 <div align="center">
+  <a href="https://github.com/Navneet23b-Git?preview=true&tab=repositories">
+    <img src="./featured_projects_top.svg" width="100%" alt="Featured Projects Header" />
+  </a>
   <a href="https://github.com/Navneet23b-Git/LibroFlow">
-    <img src="./featured_projects.svg" width="100%" alt="Featured Projects" />
+    <img src="./featured_projects_bottom.svg" width="100%" alt="Featured Projects Grid" />
   </a>
 </div>
 
