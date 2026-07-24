@@ -6,18 +6,15 @@
 <br/>
 
 <!-- About Me Section -->
-<table width="100%">
-  <tr>
-    <td>
-      <h3><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Man%20Technologist.png" alt="Technologist" width="25" /> About Me</h3>
-      <p>Passionate Full Stack Developer and AI Enthusiast. I love building scalable applications, automating workflows, and exploring the power of AI to solve real-world problems.</p>
-      <kbd>🎓 B.Tech CSE @ IIT Guwahati</kbd>&nbsp;&nbsp;
-      <kbd>💼 SWE Intern @ AlgoUniversity</kbd>&nbsp;&nbsp;
-      <kbd>🌱 Lifelong Learner</kbd>&nbsp;&nbsp;
-      <kbd>🚀 Open Source Enthusiast</kbd>
-    </td>
-  </tr>
-</table>
+<h3>👨‍💻 About Me</h3>
+<p>Passionate Full Stack Developer and AI Enthusiast. I love building scalable applications, automating workflows, and exploring the power of AI to solve real-world problems.</p>
+
+<p align="center">
+  <kbd>&nbsp;&nbsp;&nbsp;🎓 B.Tech CSE @ IIT Guwahati&nbsp;&nbsp;&nbsp;</kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <kbd>&nbsp;&nbsp;&nbsp;💼 SWE Intern @ AlgoUniversity&nbsp;&nbsp;&nbsp;</kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <kbd>&nbsp;&nbsp;&nbsp;🌱 Lifelong Learner&nbsp;&nbsp;&nbsp;</kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <kbd>&nbsp;&nbsp;&nbsp;🚀 Open Source Enthusiast&nbsp;&nbsp;&nbsp;</kbd>
+</p>
 
 <br/>
 
