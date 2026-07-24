@@ -1,32 +1,46 @@
 <!-- Header Image -->
 <div align="center">
-  <img src="./header_banner.png" width="100%" alt="Header" />
+  <a href="https://github.com/Navneet23b-Git">
+    <img src="./header_banner.png" width="100%" alt="Header" />
+  </a>
 </div>
 
 <br/>
 
 <!-- About Me Section -->
 <div align="center">
-  <img src="./about_me.svg" width="100%" alt="About Me" />
+  <a href="https://github.com/Navneet23b-Git">
+    <img src="./about_me.svg" width="100%" alt="About Me" />
+  </a>
 </div>
 
 <br/>
 
 <!-- Featured Projects -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left"><h3 style="margin: 0;">🚀 Featured Projects</h3></td>
+    <td align="right"><a href="https://github.com/Navneet23b-Git?preview=true&tab=repositories">View all repositories ➔</a></td>
+  </tr>
+</table>
+
 <div align="center">
-  <a href="https://github.com/Navneet23b-Git?preview=true&tab=repositories">
-    <img src="./featured_projects_top.svg" width="100%" alt="Featured Projects Header" />
-  </a>
-  <a href="https://github.com/Navneet23b-Git/LibroFlow">
-    <img src="./featured_projects_bottom.svg" width="100%" alt="Featured Projects Grid" />
-  </a>
+  <a href="https://github.com/Navneet23b-Git/LibroFlow"><img src="./project_1.svg" width="32%" alt="Project 1" /></a>
+  <a href="https://github.com/Navneet23b-Git/LibroFlow"><img src="./project_2.svg" width="32%" alt="Project 2" /></a>
+  <a href="https://github.com/Navneet23b-Git/LibroFlow"><img src="./project_3.svg" width="32%" alt="Project 3" /></a>
+  <br/>
+  <a href="https://github.com/Navneet23b-Git/LibroFlow"><img src="./project_4.svg" width="32%" alt="Project 4" /></a>
+  <a href="https://github.com/Navneet23b-Git/LibroFlow"><img src="./project_5.svg" width="32%" alt="Project 5" /></a>
+  <a href="https://github.com/Navneet23b-Git/LibroFlow"><img src="./project_6.svg" width="32%" alt="Project 6" /></a>
 </div>
 
 <br/>
 
 <!-- Tech Stack -->
 <div align="center">
-  <img src="./tech_stack.svg" width="100%" alt="Tech Stack" />
+  <a href="https://github.com/Navneet23b-Git">
+    <img src="./tech_stack.svg" width="100%" alt="Tech Stack" />
+  </a>
 </div>
 
 <br/>
