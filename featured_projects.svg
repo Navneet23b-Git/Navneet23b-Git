@@ -18,6 +18,7 @@
   <rect class="bg-rect" x="1" y="1" width="898" height="658" rx="10"/>
   <text x="25" y="43" font-size="20">🚀</text>
   <text x="55" y="41" class="title">Featured Projects</text>
+  <text x="875" y="41" class="link" text-anchor="end">View all repositories →</text>
   <g transform="translate(25, 75)">
     <rect class="card-rect" width="270" height="270" rx="8"/>
     <text x="15" y="28" font-size="16">📩</text>
