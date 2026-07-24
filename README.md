@@ -66,7 +66,7 @@
 ### 📊 GitHub Analytics
 <div align="center">
   <a href="https://github.com/Navneet23b-Git">
-    <img src="./analytics.svg" width="100%" alt="GitHub Analytics" />
+    <img src="./analytics.svg?v=2" width="100%" alt="GitHub Analytics" />
   </a>
 </div>
 
