@@ -32,14 +32,9 @@
 <br/>
 
 <!-- Connect With Me -->
-### 🔗 Connect With Me
+<!-- Connect With Me -->
 <div align="center">
-  <a href="#"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Portfolio-2563EB?style=for-the-badge&logo=react&logoColor=white" /></a>
+  <a href="#"><img src="./connect_1.svg" width="15.44%" alt="GitHub" /></a><a href="#"><img src="./connect_2.svg" width="13.77%" alt="LinkedIn" /></a><a href="#"><img src="./connect_3.svg" width="13.77%" alt="Twitter" /></a><a href="#"><img src="./connect_4.svg" width="13.77%" alt="LeetCode" /></a><a href="#"><img src="./connect_5.svg" width="13.77%" alt="Codeforces" /></a><a href="#"><img src="./connect_6.svg" width="13.77%" alt="Email" /></a><a href="#"><img src="./connect_7.svg" width="15.66%" alt="Portfolio" /></a>
 </div>
 
 <br/>
