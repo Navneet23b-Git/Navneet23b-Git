@@ -13,37 +13,11 @@
 <br/>
 
 <!-- Featured Projects -->
-### 🚀 Featured Projects
-<table width="100%">
-  <tr>
-    <td width="50%">
-      <a href="#">
-        <!-- Note: Replace "repo-name" with your actual repo names to load the real data -->
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=Navneet23b-Git&repo=ai-email-assistant&theme=react&bg_color=0D1117&border_color=30363d&title_color=58a6ff&text_color=c9d1d9" alt="AI Email Assistant" />
-      </a>
-    </td>
-    <td width="50%">
-      <a href="#">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=Navneet23b-Git&repo=self-healing-cicd&theme=react&bg_color=0D1117&border_color=30363d&title_color=58a6ff&text_color=c9d1d9" alt="Self-Healing CI/CD" />
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <a href="#">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=Navneet23b-Git&repo=ai-pr-reviewer&theme=react&bg_color=0D1117&border_color=30363d&title_color=58a6ff&text_color=c9d1d9" alt="AI PR Reviewer" />
-      </a>
-    </td>
-    <td width="50%">
-      <a href="#">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=Navneet23b-Git&repo=smart-library-system&theme=react&bg_color=0D1117&border_color=30363d&title_color=58a6ff&text_color=c9d1d9" alt="Smart Library System" />
-      </a>
-    </td>
-  </tr>
-</table>
-
+<div align="center">
+  <img src="./featured_projects.svg" width="100%" alt="Featured Projects" />
+</div>
 <div align="right">
-  <a href="#">View all repositories ➔</a>
+  <a href="https://github.com/Navneet23b-Git?preview=true&tab=repositories">View all repositories ➔</a>
 </div>
 
 <br/>
