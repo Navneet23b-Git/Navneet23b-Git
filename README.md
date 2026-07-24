@@ -6,15 +6,9 @@
 <br/>
 
 <!-- About Me Section -->
-<h3>👨‍💻 About Me</h3>
-<p>Passionate Full Stack Developer and AI Enthusiast. I love building scalable applications, automating workflows, and exploring the power of AI to solve real-world problems.</p>
-
-<p align="center">
-  <kbd>&nbsp;&nbsp;&nbsp;🎓 B.Tech CSE @ IIT Guwahati&nbsp;&nbsp;&nbsp;</kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <kbd>&nbsp;&nbsp;&nbsp;💼 SWE Intern @ AlgoUniversity&nbsp;&nbsp;&nbsp;</kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <kbd>&nbsp;&nbsp;&nbsp;🌱 Lifelong Learner&nbsp;&nbsp;&nbsp;</kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <kbd>&nbsp;&nbsp;&nbsp;🚀 Open Source Enthusiast&nbsp;&nbsp;&nbsp;</kbd>
-</p>
+<div align="center">
+  <img src="./about_me.svg" width="100%" alt="About Me" />
+</div>
 
 <br/>
 
