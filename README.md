@@ -25,14 +25,8 @@
 <br/>
 
 <!-- Tech Stack -->
-### 🛠️ Tech Stack
 <div align="center">
-  <p><b>Frontend</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Backend</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>AI / ML</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Database</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>DevOps / Cloud</b></p>
-  <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,html,css&theme=dark" /> &nbsp;
-  <img src="https://skillicons.dev/icons?i=nodejs,express,spring,redis&theme=dark" /> &nbsp;
-  <img src="https://skillicons.dev/icons?i=python,tensorflow,pytorch,langchain&theme=dark" /> &nbsp;
-  <img src="https://skillicons.dev/icons?i=mongodb,mysql,postgres,redis&theme=dark" /> &nbsp;
-  <img src="https://skillicons.dev/icons?i=docker,aws,linux,githubactions&theme=dark" />
+  <img src="./tech_stack.svg" width="100%" alt="Tech Stack" />
 </div>
 
 <br/>
